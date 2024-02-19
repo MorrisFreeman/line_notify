@@ -2,7 +2,7 @@
 name = "line_notify"
 version = "0.1.0"
 author = ["Yuta Hirata"]
-definition = "A simple line notify client"
+description = "A simple line notify client"
 license = "MIT"
 edition = "2021"
 
