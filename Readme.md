@@ -12,7 +12,7 @@ use tokio;
 
 #[tokio::main]
 async fn main() {
-    let token = "YOUR_ACCESS_TOKEN"
+    let token = "YOUR_ACCESS_TOKEN";
     let message = "Hello, World!";
     let line_notify = LineNotify::new(token);
     match line_notify.set_message(message).send().await {

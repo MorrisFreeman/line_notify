@@ -13,7 +13,7 @@ async fn main() {
     };
     let message = "Hello, World!";
     let image_url = "https://avatars.githubusercontent.com/u/26075006?v=4";
-    let line_notify = LineNotify::new(token);
+    let line_notify = LineNotify::new(&token);
     match line_notify
         .set_message(message)
         .set_image_thumb(image_url)

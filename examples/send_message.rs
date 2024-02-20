@@ -12,7 +12,7 @@ async fn main() {
         }
     };
     let message = "Hello, World!";
-    let line_notify = LineNotify::new(token);
+    let line_notify = LineNotify::new(&token);
     match line_notify.set_message(message).send().await {
         Ok(response) => {
             println!("Status: {}", response.status());

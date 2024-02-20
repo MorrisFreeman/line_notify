@@ -33,9 +33,9 @@ impl LineNotify {
     /// ```
     /// let notifier = LineNotify::new("YOUR_ACCESS_TOKEN".to_string());
     /// ```
-    pub fn new(token: String) -> Self {
+    pub fn new(token: &str) -> Self {
         LineNotify {
-            token,
+            token: token.to_string(),
             message: None,
             image_thumb: None,
             image_full: None,

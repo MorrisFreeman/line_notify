@@ -13,7 +13,7 @@ async fn main() {
     };
     let message = "Hello, World!";
     let file_path = "path/to/image.jpg";
-    let line_notify = LineNotify::new(token);
+    let line_notify = LineNotify::new(&token);
     match line_notify
         .set_message(message)
         .set_image_file(file_path)

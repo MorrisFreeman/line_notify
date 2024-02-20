@@ -1,6 +1,6 @@
 [package]
 name = "line_notify"
-version = "0.2.0"
+version = "0.2.1"
 author = ["Yuta Hirata"]
 description = "A simple line notify client"
 repository = "https://github.com/MorrisFreeman/line_notify"
