@@ -12,17 +12,19 @@ use tokio;
 
 #[tokio::main]
 async fn main() {
-    let notifier = LineNotify::new(
-        "YOUR_ACCESS_TOKEN".to_string(),
-        Some("こんにちは、世界！".to_string()),
-        None // または画像を送信する場合はSome("path/to/your/image.jpg".to_string())
-    );
-
-    match notifier.send().await {
-        Ok(_) => println!("通知が正常に送信されました。"),
-        Err(e) => println!("通知の送信に失敗しました: {}", e),
+    let token = "YOUR_ACCESS_TOKEN"
+    let message = "Hello, World!";
+    let line_notify = LineNotify::new(token);
+    match line_notify.set_message(message).send().await {
+        Ok(response) => {
+            println!("Status: {}", response.status());
+            println!("Headers:\n{:#?}", response.headers());
+            println!("Body: {}", response.text().await.unwrap());
+        },
+        Err(e) => println!("Error: {}", e),
     }
 }
+
 ```
 
 ## 貢献

@@ -12,9 +12,13 @@ async fn main() {
         }
     };
     let message = "Hello, World!";
-    let line_notify = LineNotify::new(token, Some(message.to_string()), None);
-    match line_notify.send().await {
-        Ok(_) => println!("Notification sent"),
+    let line_notify = LineNotify::new(token);
+    match line_notify.set_message(message).send().await {
+        Ok(response) => {
+            println!("Status: {}", response.status());
+            println!("Headers:\n{:#?}", response.headers());
+            println!("Body: {}", response.text().await.unwrap());
+        },
         Err(e) => println!("Error: {}", e),
     }
 }
